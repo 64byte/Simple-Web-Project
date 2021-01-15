@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav-links">
-      <router-link to="/">Home</router-link>
-      <router-link to="/article">Article</router-link>
+    <div class="router-links">
+      <router-link class="nav-links" to="/">Home</router-link>
+      <router-link class="nav-links" to="/article">Article</router-link>
     </div>
     <router-view></router-view>
   </div>
@@ -35,8 +35,12 @@ export default {
     background-color: blue;
   }
 
-  #nav-links {
-    float: left;
+  .router-links {
+
+  }
+
+  .nav-links {
+    margin: 10px;
     display: inline-block;
   }
 </style>
