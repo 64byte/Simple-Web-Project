@@ -1,24 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Home from './components/Home'
-import About from './components/About'
-import NotFound from "@/components/NotFound"
+import router from './router'
 
 Vue.config.productionTip = false
 
-const routes = {
-  '/': Home,
-  '/about': About
-}
-
 new Vue({
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent() {
-      return routes[this.currentRoute] || NotFound
-    }
-  },
+  el: '#app',
   render: h => h(App),
+  router,
 }).$mount('#app')
