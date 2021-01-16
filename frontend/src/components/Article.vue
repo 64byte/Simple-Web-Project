@@ -1,7 +1,14 @@
 <template>
-  <div>
-    article list
-  </div>
+  <v-app>
+    <v-subheader>
+      <h1>
+        Article
+      </h1>
+    </v-subheader>
+    <v-divider>
+
+    </v-divider>
+  </v-app>
 </template>
 
 <script>
