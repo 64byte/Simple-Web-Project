@@ -12,7 +12,7 @@ jobs:
         password: ${{ secrets.acr_simple2frontend_password }}
         
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./backend/gradlew build
     
     - name: Build and push image to ACR
       id: build-image
