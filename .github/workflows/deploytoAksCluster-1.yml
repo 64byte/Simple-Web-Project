@@ -19,7 +19,7 @@ jobs:
       working-directory: './backend'
       id: build-image
       run: |
-        docker build -t simple2frontend.azurecr.io/kube-backend:${{ github.sha }} --label dockerfile-path=backend/Dockerfile
+        docker build -t simple2frontend.azurecr.io/kube-backend:${{ github.sha }} ./ --label dockerfile-path=backend/Dockerfile
         docker push simple2frontend.azurecr.io/kube-backend:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
