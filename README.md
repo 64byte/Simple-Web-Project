@@ -34,4 +34,4 @@ Ingress Controller(nginx with cert manager) - Ingress - Service - Pod
 
 - 설정 파일 관리 (ConfigMap)
 - dev/staing/production 분리 (설정 파일 포함)
-
+- jenkin x 도입해보기
