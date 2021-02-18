@@ -40,12 +40,12 @@ jobs:
         namespacePresent=`kubectl get namespace | grep default | wc -l`
         if [ $namespacePresent -eq 0 ]
         then
-            echo `kubectl create namespace default`
+            echo `kubectl create namespace ingress-basic`
         fi
 
     - uses: azure/k8s-create-secret@v1
       with:
-        namespace: default
+        namespace: ingress-basic
         container-registry-url: simple2frontend.azurecr.io
         container-registry-username: ${{ steps.create-acr.outputs.acr_username }}
         container-registry-password: ${{ steps.create-acr.outputs.acr_password }}
@@ -53,7 +53,7 @@ jobs:
        
     - uses: azure/k8s-deploy@v1.2
       with:
-        namespace: default
+        namespace: ingress-basic
         manifests: |
           manifests/deployment.yml
           manifests/service.yml
