@@ -56,8 +56,6 @@ jobs:
         namespace: ingress-basic
         manifests: |
           manifests/deployment.yml
-          manifests/service.yml
-          manifests/ingress.yml
         images: |
           simple2frontend.azurecr.io/kube:${{ github.sha }}
         imagepullsecrets: |
