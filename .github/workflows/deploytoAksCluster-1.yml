@@ -14,7 +14,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/backend" -f  "backend/Dockerfile" -t simple2frontend.azurecr.io/kube:${{ github.sha }} --label dockerfile-path=backend/Dockerfile
+        docker build "$GITHUB_WORKSPACE/backend" -f  "backend/Dockerfile" --build-arg JAR_FILE=build/libs/*.jar -t simple2frontend.azurecr.io/kube:${{ github.sha }} --label dockerfile-path=backend/Dockerfile
         docker push simple2frontend.azurecr.io/kube:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
