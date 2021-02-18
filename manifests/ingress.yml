@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kube-40cb"
+    labels:
+        app: "kube-40cb"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: ingress-basic-kube-40cb.5946a3d559a5478b9b1b.koreacentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kube-40cb"
+                servicePort: 80
